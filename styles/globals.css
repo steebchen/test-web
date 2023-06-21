@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: 100%;
+}
+
+.ce-toolbar__actions {
+  display: none;
+}
+
+[data-suggestion="ayo"] {
+  color: grey;
+}
+
+::selection {
+  background: black;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, img, ::selection {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
+
+/***** editor *****/
+.suggestion {
+  color: grey;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror {
+  position: relative;
+  height: 100%;
+}
+
+.ProseMirror > div {
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, p {
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.ProseMirror .is-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror .is-empty:nth-child(2)::before {
+  color: #adb5bd;
+  content: 'Write content and let TestWeb suggest something...';
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,38 @@
+{
+  "emulators": {
+    "hosting": {
+      "port": 9048
+    },
+    "auth": {
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true,
+    "firestore": {
+      "port": 8080
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "secrets": [
+        "NODE_ENV",
+        "FBASE_PRIVATE_KEY",
+        "COOKIE_SECRET",
+        "WEBHOOK_SECRET",
+        "STRIPE_KEY"
+      ]
+    }
+  }
+}
